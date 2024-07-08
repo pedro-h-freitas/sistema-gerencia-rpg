@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+
 import "@fontsource/roboto";
+
+import { AppThemeProvider } from "@/app/contexts";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,7 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body style={{ fontFamily: "Roboto" }}>{children}</body>
+      <body style={{ fontFamily: "Roboto", margin: "0px", padding: "0px" }}>
+        <AppThemeProvider>{children}</AppThemeProvider>
+      </body>
     </html>
   );
 }

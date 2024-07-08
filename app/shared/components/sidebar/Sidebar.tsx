@@ -9,10 +9,10 @@ import {
   People,
   MenuBook,
   ContactPage,
+  AccountCircle,
 } from "@mui/icons-material";
 
 import {
-  Avatar,
   Box,
   Divider,
   Drawer,
@@ -75,16 +75,12 @@ export function Sidebar({ children }: { children: ReactNode }) {
           display="flex"
           flexDirection="column"
         >
-          <Box
-            width="100%"
-            height={theme.spacing(20)}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Avatar
-              sx={{ height: theme.spacing(12), width: theme.spacing(12) }}
-              src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1398&q=80"
+          <Box width="100%" height={theme.spacing(8)} alignContent="center">
+            <ListItemLink
+              icon={<AccountCircle />}
+              to="/profile"
+              label="Perfil"
+              onClick={smDown ? toggleDrawerOpen : undefined}
             />
           </Box>
 
@@ -105,6 +101,8 @@ export function Sidebar({ children }: { children: ReactNode }) {
           </Box>
 
           <Box>
+            <Divider />
+
             <List component="nav">
               <ListItemButton onClick={toggleTheme}>
                 <ListItemIcon>

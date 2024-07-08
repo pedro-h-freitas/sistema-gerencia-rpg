@@ -12,7 +12,7 @@ import {
 import { ThemeProvider } from "@emotion/react";
 import { Box } from "@mui/material";
 
-import { LightTheme, DarkTheme } from "@/app/themes";
+import { LightTheme, DarkTheme } from "@/app/shared/themes";
 
 interface IThemeContextData {
   themeName: "light" | "dark";

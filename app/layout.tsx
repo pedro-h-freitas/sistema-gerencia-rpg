@@ -1,3 +1,5 @@
+import { AppThemeProvider } from "@/app/shared/contexts";
+
 export const metadata = {
   title: "Next.js",
 };
@@ -9,8 +11,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body style={{ fontFamily: "Roboto", margin: "0px", padding: "0px" }}>
-        {children}
+      <body style={{ margin: "0px", padding: "0px" }}>
+        <AppThemeProvider>{children}</AppThemeProvider>
       </body>
     </html>
   );

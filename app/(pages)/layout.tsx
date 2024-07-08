@@ -1,6 +1,4 @@
-import "@fontsource/roboto";
-
-import { AppThemeProvider, DrawerProvider } from "@/app/shared/contexts";
+import { DrawerProvider } from "@/app/shared/contexts";
 import { Sidebar } from "@/app/shared/components";
 
 export default function Layout({
@@ -9,10 +7,8 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <AppThemeProvider>
-      <DrawerProvider>
-        <Sidebar>{children}</Sidebar>
-      </DrawerProvider>
-    </AppThemeProvider>
+    <DrawerProvider>
+      <Sidebar>{children}</Sidebar>
+    </DrawerProvider>
   );
 }

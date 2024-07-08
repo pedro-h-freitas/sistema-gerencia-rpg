@@ -30,6 +30,7 @@ import { ListItemLink } from "@/app/shared/components";
 export function Sidebar({ children }: { children: ReactNode }) {
   const theme = useTheme();
   const smDown = useMediaQuery(theme.breakpoints.down("sm"));
+  const mdDown = useMediaQuery(theme.breakpoints.down("md"));
 
   const { isDrawerOpen, toggleDrawerOpen, drawerOptions, setDrawerOptions } =
     useDrawerContext();
@@ -75,7 +76,11 @@ export function Sidebar({ children }: { children: ReactNode }) {
           display="flex"
           flexDirection="column"
         >
-          <Box width="100%" height={theme.spacing(8)} alignContent="center">
+          <Box
+            width="100%"
+            height={theme.spacing(smDown ? 6 : mdDown ? 8 : 12)}
+            alignContent="center"
+          >
             <ListItemLink
               icon={<AccountCircle />}
               to="/profile"

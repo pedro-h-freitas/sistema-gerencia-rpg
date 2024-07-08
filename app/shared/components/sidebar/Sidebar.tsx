@@ -1,14 +1,11 @@
 "use client";
 
-import { FC, ReactNode, useEffect } from "react";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
+import { ReactNode, useEffect } from "react";
 
 import {
   DarkMode,
   Logout,
   Home,
-  LocationCity,
   People,
   MenuBook,
   ContactPage,
@@ -28,26 +25,7 @@ import {
 } from "@mui/material";
 
 import { useAppThemeContext, useDrawerContext } from "@/app/shared/contexts";
-
-interface IListItemLinkProps {
-  to: string;
-  icon: ReactNode;
-  label: string;
-  onClick: (() => void) | undefined;
-}
-
-const ListItemLink: FC<IListItemLinkProps> = ({ to, icon, label, onClick }) => {
-  const pathname = usePathname();
-
-  return (
-    <Link href={to} style={{ all: "unset" }}>
-      <ListItemButton selected={pathname === to} onClick={onClick}>
-        <ListItemIcon>{icon}</ListItemIcon>
-        <ListItemText primary={label} />
-      </ListItemButton>
-    </Link>
-  );
-};
+import { ListItemLink } from "@/app/shared/components";
 
 export function Sidebar({ children }: { children: ReactNode }) {
   const theme = useTheme();
@@ -67,17 +45,17 @@ export function Sidebar({ children }: { children: ReactNode }) {
         },
         {
           icon: <MenuBook />,
-          path: "/cidades",
+          path: "/campaings",
           label: "Campanhas",
         },
         {
           icon: <ContactPage />,
-          path: "/pessoas",
+          path: "/character-sheet",
           label: "Fichas",
         },
         {
           icon: <People />,
-          path: "/pessoas",
+          path: "/friends",
           label: "Amigos",
         },
       ]),
@@ -120,7 +98,7 @@ export function Sidebar({ children }: { children: ReactNode }) {
                   icon={icon}
                   to={path}
                   label={label}
-                  onClick={undefined}
+                  onClick={smDown ? toggleDrawerOpen : undefined}
                 />
               ))}
             </List>

@@ -26,7 +26,7 @@ import {
 import { useAppThemeContext } from "../../contexts";
 
 export function ThemeChangeButtons() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const { themeMode, themeName, toggleMode, setTheme } = useAppThemeContext();
 
@@ -61,28 +61,44 @@ export function ThemeChangeButtons() {
             />
           </ListItem>
 
-          <ListItemButton sx={{ pl: 4 }} onClick={() => setTheme("knowledge")}>
+          <ListItemButton
+            sx={{ pl: 4 }}
+            selected={themeName === "knowledge"}
+            onClick={() => setTheme("knowledge")}
+          >
             <ListItemIcon>
               <LocalLibrary />
             </ListItemIcon>
             <ListItemText primary="Conhecimento" />
           </ListItemButton>
 
-          <ListItemButton sx={{ pl: 4 }} onClick={() => setTheme("blood")}>
+          <ListItemButton
+            sx={{ pl: 4 }}
+            selected={themeName === "blood"}
+            onClick={() => setTheme("blood")}
+          >
             <ListItemIcon>
               <WaterDrop />
             </ListItemIcon>
             <ListItemText primary="Sangue" />
           </ListItemButton>
 
-          <ListItemButton sx={{ pl: 4 }} onClick={() => setTheme("energy")}>
+          <ListItemButton
+            sx={{ pl: 4 }}
+            selected={themeName === "energy"}
+            onClick={() => setTheme("energy")}
+          >
             <ListItemIcon>
               <BatteryFull />
             </ListItemIcon>
             <ListItemText primary="Energia" />
           </ListItemButton>
 
-          <ListItemButton sx={{ pl: 4 }} onClick={() => setTheme("death")}>
+          <ListItemButton
+            sx={{ pl: 4 }}
+            selected={themeName === "death"}
+            onClick={() => setTheme("death")}
+          >
             <ListItemIcon>
               <RotateRight />
             </ListItemIcon>

@@ -63,7 +63,7 @@ const themes: Record<TThemesName, Record<TThemesMode, Theme>> = {
 };
 
 export const AppThemeProvider: FC<IThemeProviderProps> = ({ children }) => {
-  const [themeMode, setThemeMode] = useState<TThemesMode>("light");
+  const [themeMode, setThemeMode] = useState<TThemesMode>("dark");
   const [themeName, setThemeName] = useState<TThemesName>("blood");
 
   const setTheme = useCallback((newTheme: TThemesName) => {

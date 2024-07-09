@@ -3,7 +3,6 @@
 import { ReactNode, useEffect } from "react";
 
 import {
-  DarkMode,
   Logout,
   Home,
   People,
@@ -24,8 +23,9 @@ import {
   useTheme,
 } from "@mui/material";
 
-import { useAppThemeContext, useDrawerContext } from "@/app/shared/contexts";
+import { useDrawerContext } from "@/app/shared/contexts";
 import { ListItemLink } from "@/app/shared/components";
+import { ThemeChangeButtons } from "./ThemeChangeButtons";
 
 export function Sidebar({ children }: { children: ReactNode }) {
   const theme = useTheme();
@@ -34,7 +34,6 @@ export function Sidebar({ children }: { children: ReactNode }) {
 
   const { isDrawerOpen, toggleDrawerOpen, drawerOptions, setDrawerOptions } =
     useDrawerContext();
-  const { toggleTheme } = useAppThemeContext();
 
   useEffect(
     () =>
@@ -109,16 +108,12 @@ export function Sidebar({ children }: { children: ReactNode }) {
             <Divider />
 
             <List component="nav">
-              <ListItemButton onClick={toggleTheme}>
-                <ListItemIcon>
-                  <DarkMode></DarkMode>
-                </ListItemIcon>
-                <ListItemText primary="Alternar Ttema" />
-              </ListItemButton>
+              <ThemeChangeButtons />
+
               {/* <ListItemButton onClick={logout}> */}
               <ListItemButton>
                 <ListItemIcon>
-                  <Logout></Logout>
+                  <Logout />
                 </ListItemIcon>
                 <ListItemText primary="Sair" />
               </ListItemButton>

@@ -1,2 +1,2 @@
 export * from "./sidebar/Sidebar";
-export * from "./list-item-link/ListItemLink";
+export * from "./sidebar/ListItemLink";

@@ -23,9 +23,9 @@ import {
   useTheme,
 } from "@mui/material";
 
+import { ThemeChangeButtons } from "@/app/shared/components";
 import { useDrawerContext } from "@/app/shared/contexts";
 import { ListItemLink } from "@/app/shared/components";
-import { ThemeChangeButtons } from "./ThemeChangeButtons";
 
 export function Sidebar({ children }: { children: ReactNode }) {
   const theme = useTheme();

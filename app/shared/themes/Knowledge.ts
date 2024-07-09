@@ -1,6 +1,10 @@
 import { createTheme } from "@mui/material";
 
-import { DarkOptions, LightOptions, KnowledgeOptions } from "./ThemeOptions";
+import {
+  DarkOptions,
+  LightOptions,
+  KnowledgeOptions,
+} from "@/app/shared/themes";
 
 export const KnowledgeDarkTheme = createTheme({
   palette: {

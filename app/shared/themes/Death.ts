@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material";
 
-import { DarkOptions, LightOptions, DeathOptions } from "./ThemeOptions";
+import { DarkOptions, LightOptions, DeathOptions } from "@/app/shared/themes";
 
 export const DeathDarkTheme = createTheme({
   palette: {

@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material";
 
-import { DarkOptions, LightOptions, EnergyOptions } from "./ThemeOptions";
+import { DarkOptions, LightOptions, EnergyOptions } from "@/app/shared/themes";
 
 export const EnergyDarkTheme = createTheme({
   palette: {

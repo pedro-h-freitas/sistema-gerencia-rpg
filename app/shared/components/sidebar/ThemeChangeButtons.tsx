@@ -11,7 +11,6 @@ import {
   LocalLibrary,
   RotateRight,
   WaterDrop,
-  Wifi,
 } from "@mui/icons-material";
 
 import {
@@ -23,7 +22,8 @@ import {
   ListItemText,
   Switch,
 } from "@mui/material";
-import { useAppThemeContext } from "../../contexts";
+
+import { useAppThemeContext } from "@/app/shared/contexts";
 
 export function ThemeChangeButtons() {
   const [open, setOpen] = useState(false);

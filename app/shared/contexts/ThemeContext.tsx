@@ -9,18 +9,19 @@ import {
   useMemo,
   useState,
 } from "react";
+
 import { ThemeProvider } from "@emotion/react";
 import { Box, Theme } from "@mui/material";
 
 import {
+  KnowledgeLightTheme,
+  KnowledgeDarkTheme,
   EnergyLightTheme,
   EnergyDarkTheme,
-  BloodDarkTheme,
   BloodLightTheme,
-  DeathDarkTheme,
   DeathLightTheme,
-  KnowledgeDarkTheme,
-  KnowledgeLightTheme,
+  BloodDarkTheme,
+  DeathDarkTheme,
 } from "@/app/shared/themes";
 
 type TThemesMode = "light" | "dark";

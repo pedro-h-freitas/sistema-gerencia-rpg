@@ -1,10 +1,10 @@
 "use client";
 
 import { FC, ReactNode } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 import { ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
-import { usePathname } from "next/navigation";
 
 interface IListItemLinkProps {
   to: string;
